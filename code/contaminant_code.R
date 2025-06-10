@@ -13,9 +13,6 @@
 #  LOAD APPROPRIATE PACKAGES  #
 #-----------------------------#
 library(ggplot2)
-library(brms)
-library(bayesplot)
-library(posterior)
 library(cowplot)
 
 
@@ -52,9 +49,12 @@ blubber <- ggplot(data) +
   )
 
 # Combined
-pdf("../results/Hg_plots.pdf", width = 7, height = 3)
+png("../results/Hg_plots.png", width = 7, height = 3, units = "in", res = 300)
 plot_grid(blubber, skin, nrow = 1, ncol = 2, labels = c('A', 'B'), label_size = 12)
 dev.off()
+#pdf("../results/Hg_plots.pdf", width = 7, height = 3)
+#plot_grid(blubber, skin, nrow = 1, ncol = 2, labels = c('A', 'B'), label_size = 12)
+#dev.off()
 
 #-------------------------#
 #  Statistical Analyses   #
@@ -283,9 +283,13 @@ blubber_v_skin <- ggplot(data) +
     y = "Hg in skin (ng/g)"
   )
 
-pdf("../results/Hg-blubber_v_Hg-skin.pdf", width = 4.0, height = 2.5)
+png("../results/Hg-blubber_v_Hg-skin.png", width = 4, height = 2.5, units = "in", res = 300)
 plot(blubber_v_skin)
 dev.off()
+
+#pdf("../results/Hg-blubber_v_Hg-skin.pdf", width = 4.0, height = 2.5)
+#plot(blubber_v_skin)
+#dev.off()
 
 #--- Statistics of skin vs blubber ---#
 # Female
