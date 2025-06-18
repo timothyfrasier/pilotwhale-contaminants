@@ -3,7 +3,7 @@
 #  CONTAMINANT DATA.                 #
 #                                    #
 #         Last updated:              #
-#          01-APR-2025               #
+#          18-Jun-2025               #
 #                                    #
 #             by                     #
 #         Tim Frasier                #
@@ -49,8 +49,8 @@ blubber <- ggplot(data) +
   )
 
 # Combined
-png("../results/Hg_plots.png", width = 7, height = 3, units = "in", res = 300)
-plot_grid(blubber, skin, nrow = 1, ncol = 2, labels = c('A', 'B'), label_size = 12)
+tiff("../results/Hg_plots.tiff", width = 7, height = 3, units = "in", res = 600)
+plot_grid(blubber, skin, nrow = 1, ncol = 2, labels = c('(a)', '(b)'), label_size = 12)
 dev.off()
 #pdf("../results/Hg_plots.pdf", width = 7, height = 3)
 #plot_grid(blubber, skin, nrow = 1, ncol = 2, labels = c('A', 'B'), label_size = 12)
@@ -283,7 +283,7 @@ blubber_v_skin <- ggplot(data) +
     y = "Hg in skin (ng/g)"
   )
 
-png("../results/Hg-blubber_v_Hg-skin.png", width = 4, height = 2.5, units = "in", res = 300)
+tiff("../results/Hg-blubber_v_Hg-skin.tiff", width = 4, height = 2.5, units = "in", res = 600)
 plot(blubber_v_skin)
 dev.off()
 
